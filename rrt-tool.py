@@ -200,10 +200,11 @@ def main():
     p = argparse.ArgumentParser(description='Round-trip translation tool')
     p.add_argument('--source', default='original.py', help='Source Python file')
     p.add_argument('--outdir', default='build', help='Output directory for generated code')
+    p.add_argument('--func', '--fn', dest='fn', help='Function name to process (defaults to first function)')
     p.add_argument('--run-tests', action='store_true', help='Run tests on round-tripped modules')
     args = p.parse_args()
 
-    info = parse_python_function(args.source)
+    info = parse_python_function(args.source, fn_name=args.fn)
 
     c_code = generate_c_code(info)
     java_code = generate_java_code(info)

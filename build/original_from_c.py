@@ -1,6 +1,6 @@
 
-def add_mul(a, b):
-    if a > b:
-        return a * b + 1
+def is_sum_even(a, b):
+    if (int(a) + int(b)) % 2 == 0:
+        return 1
     else:
-        return a + b
+        return 0

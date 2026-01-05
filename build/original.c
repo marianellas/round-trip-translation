@@ -1,11 +1,11 @@
 
 #include <stdio.h>
 
-double add_mul(double a, double b) {
-    if (a > b) {
-        return a * b + 1;
+double is_sum_even(double a, double b) {
+    if ((int(a) + int(b)) % 2 == 0) {
+        return 1;
     } else {
-        return a + b;
+        return 0;
     }
 }
 

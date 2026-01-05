@@ -1,5 +1,5 @@
 import unittest
-from original import add_mul
+from original import add_mul, is_sum_even
 
 
 class TestAddMul(unittest.TestCase):
@@ -11,6 +11,13 @@ class TestAddMul(unittest.TestCase):
 
     def test_equal(self):
         self.assertEqual(add_mul(0, 0), 0 + 0)
+
+class TestIsSumEven(unittest.TestCase):
+    def test_sum_even(self):
+        self.assertEqual(is_sum_even(2, 4), 1)
+
+    def test_sum_odd(self):
+        self.assertEqual(is_sum_even(2, 3), 0)
 
 
 if __name__ == '__main__':
